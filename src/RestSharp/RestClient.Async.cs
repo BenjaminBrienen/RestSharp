@@ -26,7 +26,10 @@ public partial class RestClient {
     public async Task<RestResponse> ExecuteAsync(RestRequest request, CancellationToken cancellationToken = default) {
         var internalResponse = await ExecuteInternal(request, cancellationToken).ConfigureAwait(false);
 
-        var response = new RestResponse();
+        var response = new RestResponse()
+        {
+            Request = request
+        };
 
         response = internalResponse.Exception == null
             ? await RestResponse.FromHttpResponse(

@@ -1,4 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <LangVersion>11.0</LangVersion>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+	</PropertyGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net6.0'">
         <PackageReference Include="System.Text.Json" Version="5.0.1" />
     </ItemGroup>

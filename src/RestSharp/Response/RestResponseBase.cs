@@ -33,7 +33,7 @@ public abstract class RestResponseBase {
     /// <remarks>
     /// Mainly for debugging if ResponseStatus is not OK
     /// </remarks>
-    public RestRequest? Request { get; set; }
+    public required RestRequest Request { get; set; }
 
     /// <summary>
     /// MIME content type of response

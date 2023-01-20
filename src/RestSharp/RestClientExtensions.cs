@@ -334,7 +334,7 @@ public static partial class RestClientExtensions {
             var line = await reader.ReadLineAsync().ConfigureAwait(false);
             if (string.IsNullOrWhiteSpace(line)) continue;
 
-            var response = new RestResponse { Content = line };
+            var response = new RestResponse { Content = line, Request = request };
             yield return serializer.Deserializer.Deserialize<T>(response)!;
         }
     }
